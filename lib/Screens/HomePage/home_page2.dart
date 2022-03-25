@@ -1,5 +1,5 @@
 import 'package:android_deso_app/Screens/Elements/app_bar.dart';
-import 'package:android_deso_app/Screens/Settings/settings_page.dart';
+import 'package:android_deso_app/Screens/HomePage/settings_page.dart';
 import 'package:android_deso_app/constants.dart';
 import 'package:flutter/material.dart';
 // https://stackoverflow.com/questions/63290506/flutter-multi-page-navigation-using-bottom-navigation-bar-icons

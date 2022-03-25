@@ -1,4 +1,4 @@
-import 'package:android_deso_app/Screens/Settings/settings_page.dart';
+import 'package:android_deso_app/Screens/HomePage/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:android_deso_app/constants.dart';
 

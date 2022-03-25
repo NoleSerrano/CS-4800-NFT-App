@@ -1,6 +1,6 @@
 import 'package:android_deso_app/Screens/Components/my_input_theme.dart';
 import 'package:android_deso_app/Screens/HomePage/home_page2.dart';
-import 'package:android_deso_app/Screens/Settings/settings_page.dart';
+import 'package:android_deso_app/Screens/HomePage/settings_page.dart';
 import 'package:android_deso_app/Screens/Settings/update_wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'Screens/HomePage/home_page.dart';
