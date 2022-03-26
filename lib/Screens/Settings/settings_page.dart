@@ -1,12 +1,8 @@
-import 'package:android_deso_app/Screens/Elements/app_bar.dart';
-import 'package:android_deso_app/Screens/Elements/app_bottom_navigation_bar2.dart';
 import 'package:android_deso_app/Screens/Settings/change_password_page.dart';
 import 'package:android_deso_app/Screens/Settings/update_email_page.dart';
 import 'package:android_deso_app/Screens/Settings/update_wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:android_deso_app/constants.dart';
-
-import '../Elements/app_bottom_navigation_bar.dart';
 
 // TODO want to figure out how on unfocus and if password visible make it not visible again
 

@@ -33,6 +33,16 @@ class _CreateListingPageState extends State<CreateListingPage> {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20),
+                  child: ElevatedButton(
+                      onPressed: () {
+                      },
+                      style: elevatedButtonStyle,
+                      child: Text(
+                        'Upload your images',
+                      )),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     validator: (s) {
@@ -97,14 +107,14 @@ class _CreateListingPageState extends State<CreateListingPage> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 15),
+                  margin: EdgeInsets.only(top: 15, bottom: 10),
                   child: ElevatedButton(
                       onPressed: () {
                         _formkey.currentState!.validate();
                       },
                       style: elevatedButtonStyle,
                       child: Text(
-                        'Update',
+                        'Publish your listing',
                       )),
                 ),
               ],
