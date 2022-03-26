@@ -12,16 +12,21 @@ class HomePage2 extends StatefulWidget {
   State<HomePage2> createState() => _HomePage2State();
 }
 
+
+
 final iconSize = 30.0;
 
 class _HomePage2State extends State<HomePage2> {
-  int selectedPage = 0;
+  int selectedPage = 2;
+
+
 
   final _pageOptions = [
     SettingsPage(),
     Center(child: Text('Contracts', style: boldHeading)),
+    Center(child: Text('Home', style: boldHeading)),
     ListingsPage(),
-    Center(child: Text('Cart', style: boldHeading))
+    Center(child: Text('Cart', style: boldHeading)),
   ];
 
   @override
@@ -30,6 +35,7 @@ class _HomePage2State extends State<HomePage2> {
         appBar: desoAppBar(context, true),
         body: _pageOptions[selectedPage],
         bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.blue,
           type: BottomNavigationBarType.fixed,
           // font size is 0 because there are no labels
           selectedLabelStyle: TextStyle(fontSize: 0),
@@ -41,10 +47,13 @@ class _HomePage2State extends State<HomePage2> {
                 icon: Icon(Icons.handshake_outlined, size: iconSize),
                 label: ''),
             BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined, size: iconSize),
+                label: ''),
+            BottomNavigationBarItem(
                 icon: Icon(Icons.list, size: iconSize), label: ''),
             BottomNavigationBarItem(
                 icon: Icon(Icons.shopping_cart_outlined, size: iconSize),
-                label: '')
+                label: ''),
           ],
 
           currentIndex: selectedPage,

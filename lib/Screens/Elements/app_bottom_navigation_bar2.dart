@@ -22,6 +22,7 @@ class _AppBottomNavBar2State extends State<AppBottomNavBar2> {
 
   // updates the state of the app to the currently selected option on the bottom nav bar
   void _onItemTapped(int index) {
+
     setState(() {
       _selectedIndex = index;
     });

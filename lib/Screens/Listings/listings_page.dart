@@ -1,4 +1,5 @@
 import 'package:android_deso_app/Screens/Components/nft_border_side.dart';
+import 'package:android_deso_app/Screens/Components/nft_listing.dart';
 import 'package:android_deso_app/Screens/Listings/create_listing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:android_deso_app/constants.dart';
@@ -14,78 +15,42 @@ class _ListingsPageState extends State<ListingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        // all the NFT listings
-        child: Column(
-          children: [
-            // A single NFT listing - InkWell makes it clickable
-            InkWell(
-              child: Column(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                          top: NftBorderSide(context),
-                          right: NftBorderSide(context),
-                          left: NftBorderSide(context),
-                        )
-                    ),
-                    child: Image.asset('lib/assets/default image.png'),
-                    margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 3),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border(
-                        left: NftBorderSide(context),
-                        right: NftBorderSide(context),
-                      )
-                    ),
-                    child: Align(
-                      child: Text(
-                        'Unique Thing',
-                        style: nftTitleStyle,
-                      ),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 3),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border(
-                          left: NftBorderSide(context),
-                          right: NftBorderSide(context),
-                        )
-                    ),
-                    child: Align(
-                      child: Text('by jellysmith987', style: nftUserStyle),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 3),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border(
-                          left: NftBorderSide(context),
-                          right: NftBorderSide(context),
-                          bottom: NftBorderSide(context),
-                        )
-                    ),
-                    child: Align(
-                      child: Text('300.0560 DESO', style: nftPriceStyle),
-                      alignment: Alignment.centerLeft,
-                    ),
-                    margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Center(
+          // all the NFT listings
+          child: Column(
+            children: [
+              // A single NFT listing - InkWell makes it clickable
+              InkWell(
+                onTap: () {},
+                highlightColor: Colors.blue[200],
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: NftListing(
+                    context,
+                    Image.network(
+                        'https://www.topgear.com/sites/default/files/images/news-article/2017/11/14407fdb851d08766e90724827008664/2019-corvette-zr1-worldpremier-02.jpg?w=1280&h=720'),
+                    'Chevrolet Corvette ZR1 - 2019',
+                    'jellysmith987',
+                    '747.495888773'),
               ),
-            ),
-          ],
+
+              InkWell(
+                onTap: () {},
+                highlightColor: Colors.blue[200],
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: NftListing(
+                    context,
+                    Image.asset('lib/assets/default image.png'),
+                    'nftTitle',
+                    'nftUsername',
+                    'nftPrice'),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Container(
