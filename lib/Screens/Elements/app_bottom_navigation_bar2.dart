@@ -1,4 +1,4 @@
-import 'package:android_deso_app/Screens/HomePage/settings_page.dart';
+import 'package:android_deso_app/Screens/Settings/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:android_deso_app/constants.dart';
 
@@ -24,9 +24,9 @@ class _AppBottomNavBar2State extends State<AppBottomNavBar2> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -35,23 +35,16 @@ class _AppBottomNavBar2State extends State<AppBottomNavBar2> {
       // font size is 0 because there are no labels
       selectedLabelStyle: TextStyle(fontSize: 0),
       unselectedLabelStyle: TextStyle(fontSize: 0),
+
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined, size: iconSize),
-            label: ''
-        ),
+            icon: Icon(Icons.settings_outlined, size: iconSize), label: ''),
         BottomNavigationBarItem(
-            icon: Icon(Icons.handshake_outlined, size: iconSize),
-            label: ''
-        ),
+            icon: Icon(Icons.handshake_outlined, size: iconSize), label: ''),
         BottomNavigationBarItem(
-            icon: Icon(Icons.list, size: iconSize),
-            label: ''
-        ),
+            icon: Icon(Icons.list, size: iconSize), label: ''),
         BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined, size: iconSize),
-            label: ''
-        )
+            icon: Icon(Icons.shopping_cart_outlined, size: iconSize), label: '')
       ],
       currentIndex: _selectedIndex,
       selectedItemColor: appPrimaryColor,
