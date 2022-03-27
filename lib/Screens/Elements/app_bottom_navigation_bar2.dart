@@ -38,7 +38,6 @@ class _AppBottomNavBar2State extends State<AppBottomNavBar2> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-
       backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       // font size is 0 because there are no labels
@@ -51,8 +50,7 @@ class _AppBottomNavBar2State extends State<AppBottomNavBar2> {
         BottomNavigationBarItem(
             icon: Icon(Icons.handshake_outlined, size: iconSize), label: ''),
         BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined, size: iconSize),
-            label: ''),
+            icon: Icon(Icons.home_outlined, size: iconSize), label: ''),
         BottomNavigationBarItem(
             icon: Icon(Icons.list, size: iconSize), label: ''),
         BottomNavigationBarItem(

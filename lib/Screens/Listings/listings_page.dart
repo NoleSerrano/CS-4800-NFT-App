@@ -34,8 +34,7 @@ class _ListingsPageState extends State<ListingsPage> {
                 ),
                 child: NftListing(
                     context,
-                    Image.network(
-                        'https://www.topgear.com/sites/default/files/images/news-article/2017/11/14407fdb851d08766e90724827008664/2019-corvette-zr1-worldpremier-02.jpg?w=1280&h=720'),
+                    'https://www.topgear.com/sites/default/files/images/news-article/2017/11/14407fdb851d08766e90724827008664/2019-corvette-zr1-worldpremier-02.jpg?w=1280&h=720',
                     'Chevrolet Corvette ZR1 - 2019',
                     'jellysmith987',
                     '747.495888773'),
@@ -47,12 +46,8 @@ class _ListingsPageState extends State<ListingsPage> {
                 customBorder: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: NftListing(
-                    context,
-                    Image.asset('lib/assets/default image.png'),
-                    'nftTitle',
-                    'nftUsername',
-                    'nftPrice'),
+                child: NftListing(context, 'lib/assets/default image.png',
+                    'nftTitle', 'nftUsername', 'nftPrice'),
               ),
 
               // Overflow example
@@ -64,10 +59,25 @@ class _ListingsPageState extends State<ListingsPage> {
                 ),
                 child: NftListing(
                     context,
-                    Image.network('https://bg.systweak.com/blogs/wp-content/uploads/2022/03/How-To-Download-NVIDIA-GeForce-RTX-3050-Driver-1280x720.jpg'),
+                    'https://bg.systweak.com/blogs/wp-content/uploads/2022/03/How-To-Download-NVIDIA-GeForce-RTX-3050-Driver-1280x720.jpg',
                     'MSI Gaming GeForce RTX 3050 8GB GDRR6 128-Bit HDMI/DP PCIe 4 Torx Twin Fans Ampere OC Graphics Card (RTX 3050 Ventus 2X 8G OC)',
                     'supercalifragilisticexpialidociouspneumonoultramicroscopicsilicovolcanoconiosis',
                     '99999999999999999999999999999999999999999999999999.999999999'),
+              ),
+
+              // testing no image size
+              InkWell(
+                onTap: () {},
+                highlightColor: Colors.blue[200],
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: NftListing(
+                    context,
+                    'https://i.pinimg.com/originals/35/85/69/358569e6abb282196ea4b7d7e9488c8f.jpg',
+                    'Image that isn\'t 16:9 ratio',
+                    'Person321',
+                    '505.123456789'),
               ),
             ],
           ),

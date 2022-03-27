@@ -3,19 +3,30 @@ import 'package:android_deso_app/Screens/Components/nft_border_side.dart';
 import 'package:android_deso_app/constants.dart';
 
 // The widget will be contained inside an InkWell for tap features
-NftListing(BuildContext context, Image image, String nftTitle,
+NftListing(BuildContext context, String nftImage, String nftTitle,
     String nftUsername, String nftPrice) {
+  double marginDistance = 20;
+  Image image;
+  if (nftImage.startsWith('https://')) {
+    image = Image.network(nftImage, fit: BoxFit.cover);
+  } else {
+    image = Image.asset(nftImage, fit: BoxFit.cover);
+  }
+
   return Column(
     children: [
-      Container(
-        decoration: BoxDecoration(
-            border: Border(
-          top: NftBorderSide(context),
-          right: NftBorderSide(context),
-          left: NftBorderSide(context),
-        )),
-        child: image,
-        margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+      AspectRatio(
+        aspectRatio: 16 / 9,
+        child: Container(
+          decoration: BoxDecoration(
+              border: Border(
+            top: NftBorderSide(context),
+            right: NftBorderSide(context),
+            left: NftBorderSide(context),
+          )),
+          child: image,
+          margin: EdgeInsets.only(top: marginDistance, left: marginDistance, right: marginDistance),
+        ),
       ),
       Container(
         padding: EdgeInsets.only(left: 3),
@@ -38,7 +49,7 @@ NftListing(BuildContext context, Image image, String nftTitle,
             alignment: Alignment.centerLeft,
           ),
         ),
-        margin: EdgeInsets.only(left: 20, right: 20),
+        margin: EdgeInsets.only(left: marginDistance, right: marginDistance),
       ),
       Container(
         padding: EdgeInsets.only(left: 3),
@@ -59,7 +70,7 @@ NftListing(BuildContext context, Image image, String nftTitle,
           ),
         ),
 
-        margin: EdgeInsets.only(left: 20, right: 20),
+        margin: EdgeInsets.only(left: marginDistance, right: marginDistance),
       ),
       Container(
         padding: EdgeInsets.only(left: 3),
@@ -79,7 +90,7 @@ NftListing(BuildContext context, Image image, String nftTitle,
             alignment: Alignment.centerLeft,
           ),
         ),
-        margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+        margin: EdgeInsets.only(bottom: marginDistance, left: marginDistance, right: marginDistance),
       ),
     ],
   );

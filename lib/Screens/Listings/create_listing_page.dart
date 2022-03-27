@@ -34,8 +34,7 @@ class _CreateListingPageState extends State<CreateListingPage> {
                 Container(
                   margin: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       style: elevatedButtonStyle,
                       child: Text(
                         'Upload your images',
@@ -62,9 +61,7 @@ class _CreateListingPageState extends State<CreateListingPage> {
                   margin: EdgeInsets.only(top: 5),
                   child: TextFormField(
                     keyboardType: TextInputType.numberWithOptions(
-                      decimal: true,
-                      signed: false
-                    ),
+                        decimal: true, signed: false),
                     textInputAction: TextInputAction.next,
                     validator: (s) {
                       if (s!.isEmpty) {
@@ -102,9 +99,7 @@ class _CreateListingPageState extends State<CreateListingPage> {
                   child: TextFormField(
                     maxLines: 6,
                     maxLength: 1000,
-
                     textInputAction: TextInputAction.next,
-
                     style: TextStyle(fontSize: 20),
                     decoration: const InputDecoration(
                       helperText: '',

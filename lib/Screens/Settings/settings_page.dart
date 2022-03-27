@@ -93,9 +93,7 @@ class _SettingsPageState extends State<SettingsPage> {
             Container(
               margin: EdgeInsets.only(top: 25),
               child: ElevatedButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   style: elevatedButtonStyle,
                   child: Text(
                     'Sign out',

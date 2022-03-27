@@ -1,9 +1,11 @@
 import 'package:android_deso_app/Screens/Elements/app_bar.dart';
 import 'package:android_deso_app/Screens/Elements/app_bottom_navigation_bar2.dart';
 import 'package:flutter/material.dart';
-
 import '../../constants.dart';
 import '../Components/nft_border_side.dart';
+
+// TODO figure out how to go between multiple images (swiping is fine but I think tapping right or left is more convenient)
+// https://stackoverflow.com/questions/58155567/switch-images-with-gesturedetector-in-flutter
 
 class SingleListingPage extends StatefulWidget {
   const SingleListingPage({Key? key}) : super(key: key);
@@ -13,8 +15,9 @@ class SingleListingPage extends StatefulWidget {
 }
 
 class _SingleListingPageState extends State<SingleListingPage> {
-  Image image = Image.network(
-      'https://www.topgear.com/sites/default/files/images/news-article/2017/11/14407fdb851d08766e90724827008664/2019-corvette-zr1-worldpremier-02.jpg?w=1280&h=720');
+  double marginDistance = 10;
+  String nftImage =
+      'https://www.topgear.com/sites/default/files/images/news-article/2017/11/14407fdb851d08766e90724827008664/2019-corvette-zr1-worldpremier-02.jpg?w=1280&h=720';
   String nftTitle = 'Chevrolet Corvette ZR1 - 2019';
   String nftUsername = 'jellysmith987';
   String nftPrice = '747.495888773';
@@ -23,19 +26,33 @@ class _SingleListingPageState extends State<SingleListingPage> {
 
   @override
   Widget build(BuildContext context) {
+    Image image;
+    if (nftImage.startsWith('https://')) {
+      image = Image.network(nftImage, fit: BoxFit.cover);
+    } else {
+      image = Image.asset(nftImage, fit: BoxFit.cover);
+    }
+
     return Scaffold(
       appBar: desoAppBar(context, true),
       body: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                border: Border(
-              top: NftBorderSide(context),
-              right: NftBorderSide(context),
-              left: NftBorderSide(context),
-            )),
-            child: image,
-            margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+          // detect tap right or left
+          GestureDetector(
+            onTap: () { print("TAPPED"); },
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                top: NftBorderSide(context),
+                right: NftBorderSide(context),
+                left: NftBorderSide(context),
+              )),
+              child: image,
+              margin: EdgeInsets.only(
+                  top: marginDistance,
+                  left: marginDistance,
+                  right: marginDistance),
+            ),
           ),
           Container(
             padding: EdgeInsets.only(left: 3),
@@ -58,7 +75,8 @@ class _SingleListingPageState extends State<SingleListingPage> {
                 alignment: Alignment.centerLeft,
               ),
             ),
-            margin: EdgeInsets.only(left: 20, right: 20),
+            margin:
+                EdgeInsets.only(left: marginDistance, right: marginDistance),
           ),
           Container(
             padding: EdgeInsets.only(left: 3),
@@ -79,7 +97,8 @@ class _SingleListingPageState extends State<SingleListingPage> {
               ),
             ),
 
-            margin: EdgeInsets.only(left: 20, right: 20),
+            margin:
+                EdgeInsets.only(left: marginDistance, right: marginDistance),
           ),
           Container(
             padding: EdgeInsets.only(left: 3),
@@ -99,29 +118,35 @@ class _SingleListingPageState extends State<SingleListingPage> {
                 alignment: Alignment.centerLeft,
               ),
             ),
-            margin: EdgeInsets.only(left: 20, right: 20),
+            margin:
+                EdgeInsets.only(left: marginDistance, right: marginDistance),
           ),
-          Container(
-            padding: EdgeInsets.only(left: 3),
-            // necessary width because otherwise if text is too small the scroll messes it up
-            height: 192,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border(
-                  left: NftBorderSide(context),
-                  right: NftBorderSide(context),
-                  bottom: NftBorderSide(context),
-                )),
-            child: SingleChildScrollView(
-              child: Align(
-                child: Text(
-                  nftDescription,
-                  style: nftDescriptionStyle,
+          Scrollbar(
+            radius: Radius.circular(5),
+            thickness: marginDistance,
+            child: Container(
+              padding: EdgeInsets.only(left: 3),
+              // necessary width because otherwise if text is too small the scroll messes it up
+              height: 192,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border(
+                    left: NftBorderSide(context),
+                    right: NftBorderSide(context),
+                    bottom: NftBorderSide(context),
+                  )),
+              child: SingleChildScrollView(
+                child: Align(
+                  child: Text(
+                    nftDescription,
+                    style: nftDescriptionStyle,
+                  ),
+                  alignment: Alignment.topLeft,
                 ),
-                alignment: Alignment.topLeft,
               ),
+              margin:
+                  EdgeInsets.only(left: marginDistance, right: marginDistance),
             ),
-            margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
           ),
         ],
       ),

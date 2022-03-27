@@ -22,8 +22,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   bool obscurePassword3 = true;
 
   void updatePasswordField(int index) {
-
-    switch(index) {
+    switch (index) {
       case 1:
         setState(() => obscurePassword = !obscurePassword);
         if (obscurePassword == true) {
@@ -50,8 +49,6 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
         break;
     }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +118,6 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                     if (s!.isEmpty) {
                       return 'This is a required field.';
                     }
-
                   },
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(
@@ -151,13 +147,10 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                     if (s!.isEmpty) {
                       return 'This is a required field.';
                     }
-
                   },
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(
-
                     suffixIcon: IconButton(
-
                         onPressed: () => updatePasswordField(3),
                         icon: Icon(
                           obscurePassword3

@@ -13,14 +13,10 @@ class HomePage2 extends StatefulWidget {
   State<HomePage2> createState() => _HomePage2State();
 }
 
-
-
 final iconSize = 30.0;
 
 class _HomePage2State extends State<HomePage2> {
   int selectedPage = 2;
-
-
 
   final _pageOptions = [
     SettingsPage(),
@@ -36,7 +32,6 @@ class _HomePage2State extends State<HomePage2> {
         appBar: desoAppBar(context, true),
         body: _pageOptions[selectedPage],
         bottomNavigationBar: BottomNavigationBar(
-
           type: BottomNavigationBarType.fixed,
           // font size is 0 because there are no labels
           selectedLabelStyle: TextStyle(fontSize: 0),
@@ -48,8 +43,7 @@ class _HomePage2State extends State<HomePage2> {
                 icon: Icon(Icons.handshake_outlined, size: iconSize),
                 label: ''),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined, size: iconSize),
-                label: ''),
+                icon: Icon(Icons.home_outlined, size: iconSize), label: ''),
             BottomNavigationBarItem(
                 icon: Icon(Icons.list, size: iconSize), label: ''),
             BottomNavigationBarItem(
