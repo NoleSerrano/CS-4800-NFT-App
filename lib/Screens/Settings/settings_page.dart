@@ -11,6 +11,9 @@ import 'package:android_deso_app/constants.dart';
 // https://www.youtube.com/watch?v=FS_LolHfLDc&ab_channel=CodeReviewIo
 // https://stackoverflow.com/questions/49681415/flutter-persistent-navigation-bar-with-named-routes
 
+// focus node? -> for hiding password automatically after clicking out of it
+// https://stackoverflow.com/questions/58097067/clickable-icon-on-textformfield-disable-textformfield-focus-on-icon-click-flu
+
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
@@ -90,7 +93,9 @@ class _SettingsPageState extends State<SettingsPage> {
             Container(
               margin: EdgeInsets.only(top: 25),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   style: elevatedButtonStyle,
                   child: Text(
                     'Sign out',

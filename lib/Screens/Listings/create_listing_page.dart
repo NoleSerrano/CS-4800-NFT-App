@@ -44,6 +44,7 @@ class _CreateListingPageState extends State<CreateListingPage> {
                 Container(
                   margin: EdgeInsets.only(top: 20),
                   child: TextFormField(
+                    maxLength: 200,
                     textInputAction: TextInputAction.next,
                     validator: (s) {
                       if (s!.isEmpty) {
@@ -60,6 +61,10 @@ class _CreateListingPageState extends State<CreateListingPage> {
                 Container(
                   margin: EdgeInsets.only(top: 5),
                   child: TextFormField(
+                    keyboardType: TextInputType.numberWithOptions(
+                      decimal: true,
+                      signed: false
+                    ),
                     textInputAction: TextInputAction.next,
                     validator: (s) {
                       if (s!.isEmpty) {
@@ -96,6 +101,7 @@ class _CreateListingPageState extends State<CreateListingPage> {
                   margin: EdgeInsets.only(top: 5),
                   child: TextFormField(
                     maxLines: 6,
+                    maxLength: 1000,
 
                     textInputAction: TextInputAction.next,
 

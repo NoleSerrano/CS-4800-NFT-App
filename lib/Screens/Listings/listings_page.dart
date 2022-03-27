@@ -1,8 +1,7 @@
-import 'package:android_deso_app/Screens/Components/nft_border_side.dart';
 import 'package:android_deso_app/Screens/Components/nft_listing.dart';
 import 'package:android_deso_app/Screens/Listings/create_listing_page.dart';
+import 'package:android_deso_app/Screens/Listings/single_listing_page.dart';
 import 'package:flutter/material.dart';
-import 'package:android_deso_app/constants.dart';
 
 class ListingsPage extends StatefulWidget {
   const ListingsPage({Key? key}) : super(key: key);
@@ -22,7 +21,13 @@ class _ListingsPageState extends State<ListingsPage> {
             children: [
               // A single NFT listing - InkWell makes it clickable
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SingleListingPage()),
+                  );
+                },
                 highlightColor: Colors.blue[200],
                 customBorder: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -48,6 +53,21 @@ class _ListingsPageState extends State<ListingsPage> {
                     'nftTitle',
                     'nftUsername',
                     'nftPrice'),
+              ),
+
+              // Overflow example
+              InkWell(
+                onTap: () {},
+                highlightColor: Colors.blue[200],
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: NftListing(
+                    context,
+                    Image.network('https://bg.systweak.com/blogs/wp-content/uploads/2022/03/How-To-Download-NVIDIA-GeForce-RTX-3050-Driver-1280x720.jpg'),
+                    'MSI Gaming GeForce RTX 3050 8GB GDRR6 128-Bit HDMI/DP PCIe 4 Torx Twin Fans Ampere OC Graphics Card (RTX 3050 Ventus 2X 8G OC)',
+                    'supercalifragilisticexpialidociouspneumonoultramicroscopicsilicovolcanoconiosis',
+                    '99999999999999999999999999999999999999999999999999.999999999'),
               ),
             ],
           ),

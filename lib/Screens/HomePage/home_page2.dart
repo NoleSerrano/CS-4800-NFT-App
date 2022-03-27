@@ -3,6 +3,7 @@ import 'package:android_deso_app/Screens/Listings/listings_page.dart';
 import 'package:android_deso_app/Screens/Settings/settings_page.dart';
 import 'package:android_deso_app/constants.dart';
 import 'package:flutter/material.dart';
+
 // https://stackoverflow.com/questions/63290506/flutter-multi-page-navigation-using-bottom-navigation-bar-icons
 
 class HomePage2 extends StatefulWidget {
@@ -35,7 +36,7 @@ class _HomePage2State extends State<HomePage2> {
         appBar: desoAppBar(context, true),
         body: _pageOptions[selectedPage],
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.blue,
+
           type: BottomNavigationBarType.fixed,
           // font size is 0 because there are no labels
           selectedLabelStyle: TextStyle(fontSize: 0),
@@ -57,6 +58,7 @@ class _HomePage2State extends State<HomePage2> {
           ],
 
           currentIndex: selectedPage,
+          selectedItemColor: appPrimaryColor,
           backgroundColor: Colors.white,
           onTap: (index) {
             setState(() {
